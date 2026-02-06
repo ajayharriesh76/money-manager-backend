@@ -2,6 +2,10 @@
 
 Spring Boot REST API for Money Manager Application
 
+## Demo Video
+https://drive.google.com/file/d/1H7pDLvJy_2PhU03pI5Km-VGHo91YQ0Mr/view?usp=sharing
+
+
 ## Tech Stack
 
 - **Framework**: Spring Boot 3.2.0
@@ -98,67 +102,6 @@ src/main/java/com/moneymanager/
 | GET | `/api/accounts/{accountName}` | Get account by name |
 | DELETE | `/api/accounts/{id}` | Delete account |
 
-## Setup Instructions
-
-### Prerequisites
-- Java 17 or higher
-- Maven 3.6+
-- Oracle Database (11g or higher)
-
-### Database Setup
-
-1. Create a new Oracle database or use existing one
-2. Run the SQL script:
-```bash
-sqlplus username/password@database < database-schema.sql
-```
-
-3. Update `application.properties` with your database credentials:
-```properties
-spring.datasource.url=jdbc:oracle:thin:@localhost:1521:XE
-spring.datasource.username=your_username
-spring.datasource.password=your_password
-```
-
-### Running the Application
-
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd money-manager-backend
-```
-
-2. Build the project:
-```bash
-mvn clean install
-```
-
-3. Run the application:
-```bash
-mvn spring-boot:run
-```
-
-The API will be available at `http://localhost:8080`
-
-## Configuration
-
-### Application Properties
-
-```properties
-# Server Configuration
-server.port=8080
-
-# Database Configuration
-spring.datasource.url=jdbc:oracle:thin:@localhost:1521:XE
-spring.datasource.username=your_username
-spring.datasource.password=your_password
-spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
-
-# JPA Configuration
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
-spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.OracleDialect
-```
 
 ## Business Rules
 
@@ -176,28 +119,6 @@ The application uses a global exception handler that returns appropriate HTTP st
 - `400 BAD REQUEST`: Invalid request or transaction not editable
 - `500 INTERNAL SERVER ERROR`: Server errors
 
-## Deployment
-
-### Building for Production
-
-```bash
-mvn clean package -DskipTests
-```
-
-This creates a JAR file in the `target/` directory.
-
-### Running the JAR
-
-```bash
-java -jar target/money-manager-backend-1.0.0.jar
-```
-
-## Testing
-
-Run tests using:
-```bash
-mvn test
-```
 
 ## License
 
